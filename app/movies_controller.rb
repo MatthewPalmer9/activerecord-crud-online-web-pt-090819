@@ -8,7 +8,11 @@
 def can_be_instantiated_and_then_saved
   movie = Movie.new()
   movie.title = "The Sting"
-  
+  movie.release_date = 1973,
+  movie.director = "George Roy Hill"
+  movie.lead = "Paul Newman"
+  movie.in_theaters = false
+  movie.save
 end
 
 def can_be_created_with_a_hash_of_attributes
