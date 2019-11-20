@@ -29,10 +29,11 @@ def can_be_created_in_a_block(args = nil)
   # release_date == 1990
 
   if args != nil
-    Movie.create do |m|
-      m.title = "The Room"
-      m.release_date = 1990
-    end
+    Movie.create(args)
+  elsif args == nil
+    args = { title: "Home Alone", release_date: 1990 }
+    Movie.create(args)
+  end 
 end
 
 def can_get_the_first_item_in_the_database
